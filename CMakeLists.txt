@@ -19,6 +19,8 @@ add_executable(cufft_bench ${SOURCES})
 
 # Link against CUDA and cuFFT
 target_link_libraries(cufft_bench CUDA::cufft)
+# CUDA architecture 70 80 89
+set_target_properties(cufft_bench PROPERTIES CUDA_ARCHITECTURES 70 80 89)
 
 # Include directories for the executable
 target_include_directories(cufft_bench PRIVATE include)
